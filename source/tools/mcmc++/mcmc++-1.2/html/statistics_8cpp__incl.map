@@ -1,0 +1,4 @@
+base referer
+rect $statistics_8h.html 163,56 323,80
+rect $ratio_8h.html 387,104 518,128
+rect $util_8h.html 582,104 704,128

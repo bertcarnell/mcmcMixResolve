@@ -1,0 +1,113 @@
+\form#0:\[f(x) = \frac{\Gamma(a+b)}{\Gamma(a)\Gamma(b)}x^{a-1}(1-x)^{b-1} \]
+\form#1:\[ \mbox{E}(x) = \frac{a}{a+b} \]
+\form#2:\[ \mbox{Var}(x) = \frac{ab}{(a+b)^2(a+b+1)} \]
+\form#3:\[ f(k) = {n \choose k}p^k (1-p)^{n-k} \]
+\form#4:\[ \mbox{E}(x) = np \]
+\form#5:\[ \mbox{Var}(x) = np(1-p) \]
+\form#6:\[ f(x) = \frac{1}{\pi\mbox{s} (1 + (\frac{x-\mbox{l}}{\mbox{s}})^2)} \]
+\form#7:\[ f(x) = \frac{1}{2^{n/2}\Gamma(n/2)}x^{n/2-1}e^{-x/2} \]
+\form#8:\[ \mbox{E}(x) = \mbox{n} \]
+\form#9:\[ \mbox{Var}(x) = 2\mbox{n} \]
+\form#10:\[f({\bf p}) /// = \Gamma(\sum_k a_k)\prod_k \frac{p_k^{a_k-1}}{\Gamma(a_k)}\]
+\form#11:\[ f(x) = \frac{1}{b}e^{-x/b} \]
+\form#12:\[ \mbox{E}(x) = \mbox{b} \]
+\form#13:\[ \mbox{Var}(x) = \mbox{b} \]
+\form#14:\[ f(x) = \frac{\Gamma((m+n)/2)}{\Gamma(m/2)\Gamma(n/2)}(m/n)^{m/2}x^{m/2-1}(1+(m/n)x)^{-(m+n)/2} \]
+\form#15:\[ \mbox{E}(x) = \frac{m}{m-2}, m > 2 \]
+\form#16:\[ \mbox{Var}(x) = \frac{2m^2(n-2)}{n(m+2)}, n > 2 \]
+\form#17:\[f(x) = \frac{1}{s^{a} \Gamma(a)} x^{a-1} e^{-x/s}\]
+\form#18:\[ \mbox{E}(x) = sa \]
+\form#19:\[ \mbox{Var}(x) = s^2a \]
+\form#20:\[ f(x) = p(1-p)^x \]
+\form#21:\[ \mbox{E}(x) = \frac{1-p}{p} \]
+\form#22:\[ \mbox{Var}(x) = \frac{1-p}{p^2} \]
+\form#23:\[ f(x) = \frac{{r \choose x}{b \choose n-x}}{{r+b \choose n}} \]
+\form#24:\[ \mbox{E}(x) = n(\frac{r}{r+b}) \]
+\form#25:\[ \mbox{Var}(x) = \frac{n(\frac{r}{r+b})(1-\frac{r}{r+b})((r+b)-n)}{r+b-1} \]
+\form#26:\[f(y) = f(1/x) \]
+\form#27:\[f(y) = \frac{s^a}{\Gamma(a)} y^{-(a+1)} e^{-s/y}\]
+\form#28:\[ \mbox{E}(x) = \frac{s}{a-1} \mbox{ for } a > 1 \]
+\form#29:\[ \mbox{Var}(x) = \frac{s^2}{(a-1)^2(a-2)} \mbox{ for } a > 2 \]
+\form#30:\[ p(y) = \frac{(s/y)^a e^{-s/y}}{\Gamma(a)} \]
+\form#31:$f(y)$
+\form#32:\[ f(y) = \frac{p(y)}{y} \]
+\form#33:\[ f(x) = \frac{1}{\sigma x\sqrt{2\pi}}e^{-\frac{(\log(x) - \mu)^2}{2\sigma^2}} \]
+\form#34:$\mu$
+\form#35:$\sigma$
+\form#36:\[ \mbox{E}(x) = e^{\mu + \sigma^2/2} \]
+\form#37:\[ \mbox{Var}(x) = e^{2\mu + \sigma^2}(e^{\sigma^2}-1) \]
+\form#38:\[ \mbox{mode} = \frac{e^\mu}{e^{\sigma^2}} \]
+\form#39:\[ \mbox{median} = e^\mu \]
+\form#40:\[ f(x) = \frac{1}{s}\frac{e^{\frac{x-m}{s}}}{(1 + e^{\frac{x-m}{s}})^2} \]
+\form#41:$e^{2\frac{x-m}{s}}$
+\form#42:\[ f(x) = \frac{1}{s}\frac{e^{\frac{-(x-m)}{s}}}{(1 + e^{\frac{-(x-m)}{s}})^2} \]
+\form#43:\[ \mbox{E}(x) = m \]
+\form#44:\[ \mbox{Var}(x) = \frac{\pi^2s^2}{3} \]
+\form#45:\[ f({\bf n}) = {\sum_i n_i \choose n_1 \dots n_I}\prod_i p_i^{n_i} \]
+\form#46:\[ f(x) = \frac{\Gamma(x+n)}{\Gamma(n)x!}p^n(1-p)^x \]
+\form#47:\[ \mbox{E}(x) = \frac{x(1-p)}{p} \]
+\form#48:\[ \mbox{Var}(x) = \frac{x(1-p)}{p^2} \]
+\form#49:\[f(x) = \frac{1}{\sigma\sqrt{2\pi}}e^{-(x-\mu)^2/2\sigma^2} \]
+\form#50:\[ \mbox{E}(x) = \mu \]
+\form#51:\[ \mbox{Var}(x) = \sigma^2 \]
+\form#52:\[ f(x) = \frac{\lambda^x e^{-\lambda}}{x!} \]
+\form#53:$\lambda$
+\form#54:\[ \mbox{E}(x) = \lambda \]
+\form#55:\[ \mbox{Var}(x) = \lambda \]
+\form#56:\[ f(x) = \frac{\Gamma(\frac{\nu+1}{2})}{\sqrt{\pi\nu}\Gamma(\frac{\nu}{2})(1 + \frac{x^2}{\nu})^{(\nu + 1)/2}} \]
+\form#57:$\nu$
+\form#58:\[ \mbox{E}(x) = 0 \quad , \quad \nu > 1 \]
+\form#59:\[ \mbox{Var}(x) = \frac{\nu}{\nu - 2} \quad , \quad \nu > 2 \]
+\form#60:\[ f(x) = (\frac{a}{b})(\frac{x}{b})^{a-1}e^{-\frac{x}{b}^a} \]
+\form#61:\[ \mbox{E}(x) = b\Gamma(1 + \frac{1}{a}) \]
+\form#62:\[ \mbox{Var}(x) = b^2(\Gamma(1+\frac{2}{a}) - \Gamma(1+\frac{1}{a})^2) \]
+\form#63:\[\log(\gamma(n+1)) - \log(\gamma(k+1)) - log(\gamma(n-k+1))\]
+\form#64:$\beta(a,b)$
+\form#65:\[\log(\Gamma(a)) + \log(\Gamma(b)) - \log(\Gamma(a+b))\]
+\form#66:\[(a-1)(\Psi(a) - \Psi(a+b)) + (b-1)(\Psi(b) - \Psi(a+b)) /// - \log(\beta(a, b))\]
+\form#67:$\Psi(x)$
+\form#68:$a$
+\form#69:$b$
+\form#70:\[ f(x) = {n \choose k}p^k(1-p)^{n-k} \]
+\form#71:$n$
+\form#72:$p$
+\form#73:\[ f({\bf x}) = \frac{\Gamma(\sum_i x_i)}{\prod_i\Gamma(x_i)}\prod_ix_i^{c_i} \]
+\form#74:\[ f(x) = e^{-1} \]
+\form#75:\[ \mbox{E}(x) = 1 \]
+\form#76:\[ \mbox{Var}(x) = 1 \]
+\form#77:\[ f(x) = \frac{1}{\sigma^a \Gamma(a)}x^{a-1}e^{-x/\sigma} \]
+\form#78:\[ \mu = a\sigma \]
+\form#79:\[ \sigma^2 = a\sigma^2 \]
+\form#80:\[ f(x) = \frac{{w \choose x}{b \choose n-x}}{{w+b \choose n}} \]
+\form#81:$w$
+\form#82:\[ \mbox{E}(x) = n(\frac{w}{w+b}) \]
+\form#83:\[ \mbox{Var}(x) = \frac{n(\frac{w}{w+b})(1-\frac{w}{w+b})((w+b)-n)}{w+b-1} \]
+\form#84:$m$
+\form#85:$s$
+\form#86:$\sum_i n_i$
+\form#87:$p_i$
+\form#88:$\sum_i p_i = 1$
+\form#89:$p_i >= 0$
+\form#90:$n > 0$
+\form#91:\[ \mbox{Var}(x) = \mu \]
+\form#92:\[ f(x) = \frac{1}{\sqrt{2\pi}}e^{-\frac{x^2}{2}} \]
+\form#93:\[ \mbox{E}(x) = 0 \]
+\form#94:$a > 0$
+\form#95:$b > 0$
+\form#96:\[ f(x) = \lambda e^{-\lambda x} \]
+\form#97:\[ \mu = \frac{1}{\lambda} \]
+\form#98:\[ \sigma^2 = \left(\frac{1}{\lambda}\right)^2 \]
+\form#99:\[ f(1/x) = \frac{1}{s^a \Gamma(a)}x^{a-1}e^{-x/s} \]
+\form#100:\[ f(y) = \frac{\lambda^a (1/y)^{a+1} e^{-\lambda/y}}{\Gamma(a)} \]
+\form#101:\[ \lambda = 1/s \]
+\form#102:\[ \mbox{E}(x) = \frac{\lambda}{a-1} \quad , \quad a > 1 \]
+\form#103:\[ \mbox{Var}(x) = \frac{\lambda^2}{(a-1)^2(a-2)} \quad , \quad a > 2 \]
+\form#104:\[ f(x) = \frac{1}{\sigma\sqrt{2\pi}}e^{-\frac{(x-\mu)^2}{2\sigma^2}} \]
+\form#105:\[\alpha = denom \times mean\]
+\form#106:\[\beta = denom \times (1-mean)\]
+\form#107:\[ s = \frac{\sum_i x_{i,top}}{\sum_i x_{i,bottom}} \]
+\form#108:\[ ss = \frac{\sum_i x_{i,top}^2}{\sum_i x_{i,bottom}^2} \]
+\form#109:\[ s/n \]
+\form#110:\[ (ss - (s*s)/n)/(n-1) \]
+\form#111:\[\mbox{floor}(x + 0.5)\]
+\form#112:$x^2$

@@ -1,0 +1,5 @@
+base referer
+rect $classStep.html 81,188 172,212
+rect $classStepBase.html 24,97 107,121
+rect $classParameterBase.html 5,7 125,31
+rect $classlot.html 131,97 168,121
