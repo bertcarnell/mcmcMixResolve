@@ -1,0 +1,41 @@
+modelSetWD('C:/Users/carnellr/Documents/Repositories/mcmcMixResolve/openBUGS')
+
+# Check model syntax
+modelCheck('Prototype_model_7.txt')
+
+# Load data
+modelData('Prototype_model_7_data.txt')
+
+# Compile with one chain
+modelCompile(1)
+
+# Load inital values for first chain
+modelInits('Prototype_model_7_inits.txt',1)
+
+# Start with 10,000 update burn-in
+modelUpdate(20000)
+
+modelSaveState('model_7_burn_output.txt')
+
+# Set nodes of interest
+samplesSet('mp')
+samplesSet('option_A')
+samplesSet('option_B')
+samplesSet('option_C')
+samplesSet('g_A')
+samplesSet('g_B')
+samplesSet('g_C')
+samplesSet('lambda_B')
+
+# Follow by a further 1,000 updates
+modelUpdate(1000, 10)
+
+modelSaveState('model_7_sample_output.txt')
+
+samplesCoda('*', 'model_7_coda.txt')
+
+# Look at sample statistics
+samplesStats('*')
+samplesDensity('*')
+samplesHistory('*')
+

@@ -1,0 +1,75 @@
+# Model conditional on the called alleles and the possible profiles at each locus
+
+# Models
+model
+{
+	# mixture proportions for the profiles
+	mptemp[1] <- mp
+	mptemp[2] <- 1 - mp
+	mptemp[3] <- 2 * mp
+	mptemp[4] <- 2 * (1 - mp)
+	mptemp[5] <- 1
+
+	#phi _A<- 1 / ((1-h_A)/(1+h_A)*(pow(1+h_A, n_pcr)-1)-1)
+	#beta_A <- 1 / phi_A
+	#phi _B<- 1 / ((1-h_B)/(1+h_B)*(pow(1+h_B, n_pcr)-1)-1)
+	#beta_B <- 1 / phi_B
+	#phi _C<- 1 / ((1-h_C)/(1+h_C)*(pow(1+h_C, n_pcr)-1)-1)
+	#beta_C <- 1 / phi_C
+	
+	# contributor i, locus j, allele k
+	for (k in 1:n_A)
+	{
+		#S_A[k] <- mptemp[profile_A[k, option_A]] / 2 * D
+		S_A[k] <- mptemp[profile_A[k, option_A]] * Ddiv2
+		#alpha_A[k] <- S_A[k] * pow(1 + h_A, n_pcr) * phi_A
+		alpha_A[k] <- S_A[k] * temp_A
+		lambda_A[k] ~ dgamma(alpha_A[k], phi_A) # in R, this is dgamma(alpha_A[k], scale=beta_A)
+		Sn_A[k] ~ dpois(lambda_A[k])
+	}
+	SumSn_A <- sum(Sn_A[])
+	for (k in 1:n_A)
+	{
+		Sn_Anorm[k] <- Sn_A[k] / SumSn_A
+	}
+	A[1:n_A] ~ dmulti(Sn_Anorm[], Sum_A)
+	
+	for (k in 1:n_B)
+	{
+		#S_B[k] <- mptemp[profile_B[k, option_B]] / 2 * D
+		S_B[k] <- mptemp[profile_B[k, option_B]] * Ddiv2
+		#alpha_B[k] <- S_B[k] * pow(1+h_B, n_pcr) * phi_B
+		alpha_B[k] <- S_B[k] * temp_B
+		lambda_B[k] ~ dgamma(alpha_B[k], phi_B)
+		Sn_B[k] ~ dpois(lambda_B[k])
+	}
+	SumSn_B <- sum(Sn_B[])
+	for (k in 1:n_B)
+	{
+		Sn_Bnorm[k] <- Sn_B[k] / SumSn_B
+	}
+	B[1:n_B] ~ dmulti(Sn_Bnorm[], Sum_B)
+	
+	for (k in 1:n_C)
+	{
+		#S_C[k] <- mptemp[profile_C[k, option_C]] / 2 * D
+		S_C[k] <- mptemp[profile_C[k, option_C]] * Ddiv2
+		#alpha_C[k] <- SC[k] * pow(1+h_C, n_pcr) * phi_C
+		alpha_C[k] <- S_C[k] * temp_C
+		lambda_C[k] ~ dgamma(alpha_C[k], phi_C)
+		Sn_C[k] ~ dpois(lambda_C[k])
+	}
+	SumSn_C <- sum(Sn_C[])
+	for (k in 1:n_C)
+	{
+		Sn_Cnorm[k] <- Sn_C[k] / SumSn_C
+	}
+	C[1:n_C] ~ dmulti(Sn_Cnorm[], Sum_C)
+
+	###### priors ########
+	# mixture proportions, non-informative piror, ensuring that mp[1] is larger than mp[2]
+	mp ~ dunif(0.5, 1)
+	option_A ~ dcat(profilePrior_A[])
+	option_B ~ dcat(profilePrior_B[])
+	option_C ~ dcat(profilePrior_C[])
+}

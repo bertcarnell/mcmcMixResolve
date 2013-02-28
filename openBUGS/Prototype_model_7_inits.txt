@@ -1,0 +1,13 @@
+list(
+	# mixture proportion
+	#mp=c(0.6, 0.4), # if mp is dirichlet
+	mp=0.6,
+	# allele profile categories
+	option_A=1,
+	option_B=1,
+	option_C=1,
+	lambda_A=c(3.24E2, 3.33E2, 1.39, 1.62),
+	lambda_B=c(6.072E3, 6.177E3, 3.405E2),
+	lambda_C=c(6.53E2, 3.42),
+	g=0.00001
+)
