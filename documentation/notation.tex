@@ -1,0 +1,97 @@
+% !TEX TS-program = pdflatex
+% !TEX encoding = UTF-8 Unicode
+
+\documentclass[11pt]{article} % use larger type; default would be 10pt
+
+\usepackage[utf8]{inputenc} % set input encoding (not needed with XeLaTeX)
+
+%%% PAGE DIMENSIONS
+\usepackage{geometry} % to change the page dimensions
+\geometry{a4paper} % or letterpaper (US) or a5paper or....
+% \geometry{margin=2in} % for example, change the margins to 2 inches all round
+% \geometry{landscape} % set up the page for landscape
+%   read geometry.pdf for detailed page layout information
+
+\usepackage{graphicx} % support the \includegraphics command and options
+
+% \usepackage[parfill]{parskip} % Activate to begin paragraphs with an empty line rather than an indent
+
+%%% PACKAGES
+\usepackage{booktabs} % for much better looking tables
+\usepackage{array} % for better arrays (eg matrices) in maths
+\usepackage{paralist} % very flexible & customisable lists (eg. enumerate/itemize, etc.)
+\usepackage{verbatim} % adds environment for commenting out blocks of text & for better verbatim
+\usepackage{subfig} % make it possible to include more than one captioned figure/table in a single float
+% These packages are all incorporated in the memoir class to one degree or another...
+
+%%% HEADERS & FOOTERS
+\usepackage{fancyhdr} % This should be set AFTER setting up the page geometry
+\pagestyle{fancy} % options: empty , plain , fancy
+\renewcommand{\headrulewidth}{0pt} % customise the layout...
+\lhead{}\chead{}\rhead{}
+\lfoot{}\cfoot{\thepage}\rfoot{}
+
+%%% SECTION TITLE APPEARANCE
+\usepackage{sectsty}
+\allsectionsfont{\sffamily\mdseries\upshape} % (See the fntguide.pdf for font help)
+% (This matches ConTeXt defaults)
+
+%%% ToC (table of contents) APPEARANCE
+\usepackage[nottoc,notlof,notlot]{tocbibind} % Put the bibliography in the ToC
+\usepackage[titles,subfigure]{tocloft} % Alter the style of the Table of Contents
+\renewcommand{\cftsecfont}{\rmfamily\mdseries\upshape}
+\renewcommand{\cftsecpagefont}{\rmfamily\mdseries\upshape} % No bold!
+
+\usepackage{amsmath}
+
+\title{Bayesian Mixture Deconvolution Model:  Genetic Applications}
+\author{Amicae}
+\date{2/27/2013}
+
+\begin{document}
+\maketitle
+
+\section{Notation}
+Using \textbf{bold} for arrays of dimension two and larger and $\vec{vector}$ arrows for one dimensional arrays.
+\begin{itemize}
+   \item $N$ = number of contributors
+   \item $L$ = number of loci
+   \item $i \in \{1 \ldots N\}$
+   \item $j \in \{1 \ldots L\}$
+   \item $A_j$ = the number of alleles for locus $j$
+   \item $k \in \{1 \ldots A_j\}$
+   \item $\mathbf{X}$ = STR locus and allele profile for N contributors
+   \item $\mathbf{X_i}$ = STR locus and allele profile for the $i^{th}$ contributor
+   \item $\vec{X_{ij}}$ = STR allele profile for the $j^{th}$ locus of the $i^{th}$ contributor
+   \item $X_{ijk}$ = $k^{th}$ allele for the $j^{th}$ locus of the $i^{th}$ contributor
+   \item $M_i$ = the mixture proportion for the $i^{th}$ contributor
+   \item $D$ = the number of template counts prior to PCR
+   \item $n$ = the number of PCR cycles performed
+   \item $S_{jk}^{(n)}$ = the number of template counts for $k^{th}$ allele for the $j^{th}$ locus after $n$ PCR cycles
+   \item $\eta_j$ = the PCR efficiency for locus $j$
+\end{itemize}
+
+\begin{align}
+  \mathbf{X} &= \{\mathbf{X_1},\dotsc, \mathbf{X_N} \} \\ 
+  \mathbf{X_i} &= \{\vec{X_{i1}},\dotsc, \vec{X_{iL}} \} \\
+  \vec{X_{ij}} &= \{X_{ij1},\dotsc, X_{ijA_j} \}
+\end{align}
+
+\begin{equation}
+  \sum_{i}{M_i} = 1
+\end{equation}
+
+\begin{equation}
+  \vec{S_{j}^{(0)}} = D\sum_{i}{M_i \vec{X_{ij}}}
+\end{equation}
+
+\begin{equation}
+  E[S_{jk}^{(n)}] = (1+\eta_j)^n S_{jk}^{(0)}
+\end{equation}
+
+\begin{equation}
+  V[S_{jk}^{(n)}] = \frac{1-\eta_j}{1+\eta_j} \left[ (1+\eta_j)^{2n}-(1+\eta_j)^n \right] S_{jk}^{(0)}
+\end{equation}
+
+
+\end{document}
