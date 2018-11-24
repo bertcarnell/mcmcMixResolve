@@ -22,15 +22,15 @@ for (i in 1:10000)
     pcrj <- sapply(lambdaj, function(lambdajk) rpois(1, lambdajk))
     result[i,] <- pcrj
 }
-#result2 <- sapply(alphaj, function(alphajk) rnbinom(10000, phij*alphajk, betaj))
-result2 <- sapply(alphaj, function(alphajk) rnbinom(10000, betaj, phij*alphajk))
+result2 <- sapply(alphaj, function(alphajk) rnbinom(10000, phij*alphajk*betaj, phij/(1+phij)))
 
 signif(apply(result, 2, mean),3)
 signif(Sj*(1+h)^n, 3)
-signif(apply(result2, 2, mean, na.rm=TRUE), 3)
+signif(apply(result2, 2, mean), 3)
 
 signif(apply(result, 2, var), 3)
 signif(Sj*(1+h)^n*(1-h)/(1+h)*((1+h)^n-1), 3)
+signif(apply(result2, 2, var), 3)
 
 sumResult <- apply(result, 1, sum)
 normResult <- apply(result, 2, "/", sumResult)
